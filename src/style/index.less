@@ -1,0 +1,71 @@
+// 设置变量
+@bg-color: #b7d4a8;
+
+
+body {
+    background-color: pink;
+    font: bold 20px "Courier";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// 设置主窗口样式
+#main {
+    width: 360px;
+    height: 420px;
+    margin: 100px auto;
+    border: 10px solid black;
+    border-radius: 40px;
+    background-color: @bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    #stage {
+        width: 304px;
+        height: 304px;
+        border: 2px solid black;
+        position: relative;
+
+        // 设置蛇的样式
+        #snake {
+            &>div {
+                width: 10px;
+                height: 10px;
+                background-color: #000;
+                border: 1px solid @bg-color;
+                position: absolute;
+            }
+        }
+
+        // 设置食物样式
+        &>#food {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            // background-color: red;
+            left: 40px;
+            top: 100px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            &>div {
+                width: 4px;
+                height: 4px;
+                background-color: #000;
+                // 旋转45度
+                transform: rotate(45deg);
+            }
+        }
+    }
+    #score-panel {
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
